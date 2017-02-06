@@ -1,0 +1,38 @@
+<template name="publishers"> 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Издательства</h3>
+        </div>
+        <div class="panel-body">
+		        <form role="form" class="form" id="form_publishers"> 
+		            <div class="form-group">                      
+		                <div class="input-group">		                		                
+		                    <span class="input-group-addon">Название издательства</span>
+		                    <input type="text" value="{{title}}" name="title" class="form-control">
+		                </div>
+		            </div>
+		            <div class="form-group">  
+		                <input type="submit" value="Добавить" id="btnAdd" class="btn btn-primary btn-lg center-block">
+		            </div>
+		        </form>
+	        <div class="table-responsive">
+		        <table class="table table-bordered table-hover table-striped">
+		            <thead>
+			            <tr>
+				            <th class="text-center" style="width:90%">Название издательства</th>
+				            <th class="text-center" style="width:10%" colspan="2">Действия</th>
+			            </tr>
+		            </thead>
+		            <tbody>
+			            {{#each getData}}
+			            <tr>
+				            <td>{{title}}</td>
+				            <td><a id="remove" href="#">Удалить</a>|<a href="/updatePublishers/{{_id}}">Изменить</a></td>
+			            </tr>
+			            {{/each}}
+		            </tbody>
+		        </table>
+		    </div>
+		</div>
+	</div>
+</template>
